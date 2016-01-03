@@ -1,0 +1,23 @@
+<template name="teams">
+  <h3>Teams</h3>
+  <ul class="collection">
+  {{#if isCreatingTeam}}
+    <li class="collection-item center">
+    <form class="create-team">
+        <input name="name" type="text">
+        <button type="submit" class="waves-effect waves-light btn">Submit</button>
+        <a href="#" class="cancel waves-effect waves-light btn">Cancel</a>
+      </form>
+    </li>
+  {{else}}
+    <li class="collection-item center">
+      <a href="#" class="create waves-effect waves-light btn">Create</a>
+    </li>
+  {{/if}}
+    {{#each teams}}
+      <li class="collection-item">
+        {{> team}}
+      </li>
+    {{/each}}
+  </ul>
+</template>

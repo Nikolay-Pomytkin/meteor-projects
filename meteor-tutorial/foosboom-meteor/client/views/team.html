@@ -1,0 +1,13 @@
+<template name="team">
+    {{#if isEditingTeam}}
+      <form class="form-edit">
+        <input name="name" type="text" value="{{name}}">
+        <button type="submit" class="waves-effect waves-light btn">Submit</button>
+        <a href="#" class="cancel waves-effect waves-light btn">Cancel</a>
+      </form>
+    {{else}}
+      {{name}}
+      <a href="#" class="edit waves-effect waves-light btn">edit</a>
+      <a href="#" class="remove waves-effect waves-light btn"> (x)</a>
+    {{/if}}
+</template>

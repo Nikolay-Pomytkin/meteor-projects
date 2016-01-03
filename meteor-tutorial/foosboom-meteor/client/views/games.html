@@ -1,0 +1,39 @@
+<template name="games">
+  <h3>Games</h3>
+  <ul class="collection">
+    <li class="collection-item">
+      {{#if isCreatingGame}}
+        <form class="form-create">
+          <div class="input-field col s5">
+            <select name="teamOne"  class="browser-default">
+              <option value="" disabled selected>Choose your option</option>
+              {{#each teams}}
+                <option value="{{_id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="col s2">
+            vs
+          </div>
+          <div class="input-field col s5">
+            <select name="teamTwo"  class="browser-default">
+              <option value="" disabled selected>Choose your option</option>
+              {{#each teams}}
+                <option value="{{_id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <button type="submit" class="waves-effect waves-light btn">Submit</button>
+          <a class="cancel waves-effect waves-light btn" href="#">Cancel</a>
+        </form>
+      {{else}}
+        <a class="create waves-effect waves-light btn" href="#">Create</a>
+      {{/if}}
+    </li>
+    {{#each games}}
+      <li class="collection-item">
+        {{> game}}
+      </li>
+    {{/each}}
+  </ul>
+</template>
